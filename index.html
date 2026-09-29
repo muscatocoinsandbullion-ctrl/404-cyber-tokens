@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>$404 | NOT FOUND</title>
+<style>
+* { box-sizing: border-box; }
+:root {
+  --red: #ff1744;
+  --green: #00ff9c;
+  --bg: #050609;
+  --panel: #0c1015;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: #f4f4f4;
+  font-family: "Courier New", monospace;
+  overflow-x: hidden;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  opacity: .12;
+  background: repeating-linear-gradient(
+    transparent 0px, transparent 3px,
+    rgba(255,255,255,.08) 4px
+  );
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 7%;
+  border-bottom: 1px solid #20252c;
+  background: #080a0e;
+}
+.brand { color: var(--red); font-weight: bold; font-size: 21px; }
+nav { display: flex; gap: 24px; align-items: center; }
+a { color: #b6bbc4; text-decoration: none; }
+a:hover { color: var(--green); }
+.btn {
+  display: inline-block;
+  padding: 13px 22px;
+  border: 1px solid var(--green);
+  color: var(--green);
+  background: transparent;
+  font: bold 13px "Courier New", monospace;
+  cursor: pointer;
+  text-decoration: none;
+  transition: .2s;
+}
+.btn:hover {
+  background: var(--green);
+  color: #050609;
+  box-shadow: 0 0 22px #00ff9c55;
+}
+.hero {
+  min-height: 620px;
+  padding: 90px 20px 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at center, #351019 0%, #10090e 35%, #050609 75%);
+}
+.eyebrow {
+  color: var(--green);
+  letter-spacing: 5px;
+  font-size: 12px;
+}
+.logo {
+  font-size: clamp(100px, 24vw, 220px);
+  line-height: 1;
+  margin: 30px 0 10px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -12px;
+  text-shadow: 5px 0 var(--red), -5px 0 var(--green);
+  animation: glitch 3s infinite;
+}
+@keyframes glitch {
+  0%, 90%, 100% { transform: translate(0); }
+  92% { transform: translate(4px,-2px); }
+  94% { transform: translate(-4px,2px); }
+  96% { transform: translate(2px,0); }
+}
+.subtitle {
+  color: var(--red);
+  letter-spacing: 7px;
+  font-size: clamp(17px, 4vw, 27px);
+  font-weight: bold;
+}
+.description {
+  max-width: 560px;
+  line-height: 1.8;
+  color: #a5aab4;
+  margin: 20px auto 30px;
+}
+.actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.btn-red { border-color: var(--red); color: var(--red); }
+.btn-red:hover { background: var(--red); color: white; }
+.section {
+  padding: 65px 7%;
+  max-width: 1200px;
+  margin: auto;
+}
+.section-title {
+  font-size: 23px;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+.section-title span { color: var(--red); }
+.section-desc { color: #8b929d; line-height: 1.7; }
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 14px;
+  margin-top: 30px;
+}
+.stat {
+  padding: 25px 18px;
+  border: 1px solid #222831;
+  background: linear-gradient(145deg,#10141a,#080a0e);
+}
+.stat-label { color: #858c96; font-size: 11px; letter-spacing: 2px; }
+.stat-value { font-size: 22px; color: var(--green); margin-top: 15px; }
+.terminal {
+  margin-top: 30px;
+  padding: 25px;
+  border: 1px solid #26312e;
+  background: #080c0d;
+  color: var(--green);
+  line-height: 1.9;
+  min-height: 180px;
+}
+.terminal-head { color: #a0a7af; border-bottom: 1px solid #252b2d; padding-bottom: 12px; margin-bottom: 15px; }
+.prompt { color: var(--red); }
+.archive {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+  margin-top: 28px;
+}
+.file {
+  border: 1px solid #252a32;
+  background: var(--panel);
+  padding: 24px;
+  min-height: 155px;
+  transition: .2s;
+}
+.file:hover { border-color: var(--red); transform: translateY(-3px); }
+.file-icon { font-size: 25px; color: var(--red); }
+.file h3 { font-size: 14px; letter-spacing: 1px; }
+.file p { color: #858c96; font-size: 12px; }
+.file button {
+  border: 0; background: none; color: var(--green);
+  font: 12px "Courier New", monospace; cursor: pointer;
+  padding: 5px 0;
+}
+.story {
+  border-left: 2px solid var(--red);
+  padding: 10px 25px;
+  margin: 30px 0;
+  color: #aeb4bd;
+  line-height: 1.9;
+}
+footer {
+  border-top: 1px solid #20252c;
+  padding: 30px 7%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  color: #777f89;
+  font-size: 12px;
+}
+#message {
+  color: var(--green);
+  margin-top: 18px;
+  min-height: 25px;
+  font-size: 13px;
+}
+@media(max-width:700px) {
+  header { padding: 18px 5%; }
+  nav { gap: 12px; font-size: 11px; }
+  nav a:nth-child(2) { display: none; }
+  .stats { grid-template-columns: repeat(2,1fr); }
+  .archive { grid-template-columns: 1fr; }
+  .section { padding: 50px 6%; }
+  .logo { letter-spacing: -5px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">[ 404 ] NOT FOUND</div>
+  <nav>
+    <a href="#dashboard">SYSTEM</a>
+    <a href="#archive">ARCHIVE</a>
+    <a href="#story">ABOUT</a>
+    <a class="btn" href="#buy">BUY $404</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="eyebrow">/// UNKNOWN NETWORK DETECTED ///</div>
+  <div class="logo">404</div>
+  <div class="subtitle">FILE NOT FOUND</div>
+  <p class="description">
+    You weren't supposed to find this.
+    An encrypted corner of the internet has been discovered.
+    Enter the archive. Unlock the unknown.
+  </p>
+  <div class="actions">
+    <a href="#archive" class="btn">[ ENTER THE ARCHIVE ]</a>
+    <a href="#buy" class="btn btn-red">[ BUY $404 ]</a>
+  </div>
+  <div id="message">> CONNECTION ESTABLISHED_</div>
+</section>
+
+<section class="section" id="dashboard">
+  <div class="section-title"><span>//</span> LIVE SYSTEM</div>
+  <p class="section-desc">
+    Network status and token information. Live market data will
+    appear here once the token is launched and connected.
+  </p>
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-label">TOKEN PRICE</div>
+      <div class="stat-value">--</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">MARKET CAP</div>
+      <div class="stat-value">--</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">HOLDERS</div>
+      <div class="stat-value">--</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">NETWORK</div>
+      <div class="stat-value">SOLANA</div>
+    </div>
+  </div>
+  <div class="terminal">
+    <div class="terminal-head">404_TERMINAL.exe — SYSTEM CONSOLE</div>
+    <div>> Initializing secure connection...</div>
+    <div>> Searching for missing files...</div>
+    <div>> <span class="prompt">WARNING:</span> Unauthorized archive detected.</div>
+    <div>> Awaiting user input<span class="prompt">_</span></div>
+  </div>
+</section>
+
+<section class="section" id="archive">
+  <div class="section-title"><span>//</span> THE LOST ARCHIVE</div>
+  <p class="section-desc">
+    Three files. Three mysteries. The first clue is waiting.
+    Click a file to begin your search.
+  </p>
+  <div class="archive">
+    <div class="file">
+      <div class="file-icon">▣</div>
+      <h3>FILE_001.dat</h3>
+      <p>STATUS: AVAILABLE</p>
+      <button onclick="openFile(1)">[ OPEN FILE ] →</button>
+    </div>
+    <div class="file">
+      <div class="file-icon">▣</div>
+      <h3>FILE_002.enc</h3>
+      <p>STATUS: ENCRYPTED</p>
+      <button onclick="openFile(2)">[ INVESTIGATE ] →</button>
+    </div>
+    <div class="file">
+      <div class="file-icon">▣</div>
+      <h3>FILE_003.unknown</h3>
+      <p>STATUS: CLASSIFIED</p>
+      <button onclick="openFile(3)">[ INVESTIGATE ] →</button>
+    </div>
+  </div>
+  <div class="terminal" id="archive-output">
+    <div class="terminal-head">ARCHIVE OUTPUT</div>
+    <div>> Select a file to inspect its contents.</div>
+  </div>
+</section>
+
+<section class="section" id="story">
+  <div class="section-title"><span>//</span> THE STORY</div>
+  <div class="story">
+    Somewhere in the endless network, a file disappeared.
+    No record. No origin. No explanation.
+    Only one error remained: 404.
+    <br><br>
+    Now the archive is open. The clues are scattered.
+    The community decides what happens next.
+    <br><br>
+    <span style="color:var(--green)">> THE SEARCH HAS BEGUN.</span>
+  </div>
+</section>
+
+<section class="section" id="buy">
+  <div class="section-title"><span>//</span> ACCESS THE NETWORK</div>
+  <p class="section-desc">
+    Join the community and follow the investigation.
+    Official token and trading links will be added after launch.
+  </p>
+  <div class="actions">
+    <a class="btn btn-red" href="#" onclick="showLinkNotice(event)">[ BUY $404 ]</a>
+    <a class="btn" href="#" onclick="showLinkNotice(event)">[ TELEGRAM ]</a>
+    <a class="btn" href="#" onclick="showLinkNotice(event)">[ X / TWITTER ]</a>
+  </div>
+  <div id="link-notice" style="color:var(--green);margin-top:18px;font-size:12px"></div>
+</section>
+</main>
+
+<footer>
+  <div>© 2026 $404 NOT FOUND — THE SEARCH CONTINUES</div>
+  <div>UNOFFICIAL COMMUNITY PROJECT · SOLANA</div>
+</footer>
+
+<script>
+function openFile(id) {
+  const output = document.getElementById("archive-output");
+  const messages = {
+    1: [
+      "> FILE_001.dat opened.",
+      "> Fragment recovered: THE FIRST CLUE",
+      "> Message: Look beyond what is visible.",
+      "> STATUS: FRAGMENT RECOVERED"
+    ],
+    2: [
+      "> FILE_002.enc detected.",
+      "> Encryption key required.",
+      "> Hint: The error is the beginning.",
+      "> STATUS: ACCESS LOCKED"
+    ],
+    3: [
+      "> FILE_003.unknown detected.",
+      "> Metadata corrupted.",
+      "> No further information available.",
+      "> STATUS: UNKNOWN"
+    ]
+  };
+  output.innerHTML =
+    '<div class="terminal-head">ARCHIVE OUTPUT — FILE_00' + id +
+    '</div>' +
+    messages[id].map(line => '<div>' + line + '</div>').join("");
+}
+function showLinkNotice(event) {
+  event.preventDefault();
+  document.getElementById("link-notice").textContent =
+    "> Official links will be published here after launch.";
+}
+</script>
+</body>
+</html>
